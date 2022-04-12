@@ -1,0 +1,130 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #050210;
+      }
+
+      .circle {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        animation: animate 1s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .circle span {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+      }
+
+      .circle span:nth-child(1) {
+        filter: blur(40px);
+      }
+
+      .circle span:nth-child(2) {
+        filter: blur(40px);
+      }
+
+      .circle::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        background:#050210;
+;
+        border-radius: 50%;
+      }
+      .container {
+  height: 600x;
+  width: 600px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse {
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background: rgb(10, 4, 22);
+  filter: opacity(50%);
+  
+  
+  animation-duration: 2.5s;
+  animation-name: pulse;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  
+}
+
+.pulseInner {
+  animation-delay: -2s;
+  animation-name: pulsing;
+}
+
+@keyframes pulse {
+  from {
+    height: 0;
+    width: 0;
+  }
+
+  to {
+    height: 400px;
+    width: 400px;
+  }
+  }
+
+@keyframes pulsing {
+  from {
+    height: 0;
+    width: 0;
+  }
+
+  to {
+    height: 400px;
+    width: 400px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="circle">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container">
+      <div class="pulse"></div>
+      <div class="pulse pulseInner"></div>
+    </div>
+  </body>
+</html>
